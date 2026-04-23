@@ -2,11 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'segoe UI', sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-    background-color: pink;
+    background-color: #745273;
 }
 
 .menu-opcoes {
@@ -14,7 +14,7 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     color: white;
     gap: 15px;
@@ -27,32 +27,26 @@ body {
 
 .menu {
     display: flex;
-    gap: 30px;
+    gap: 10px;
 }
 
 .menu a {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
+    padding: 5px 15px;
     font-weight: bold;
-    text-align: center;
+    transition: color 0.3s ease;
 }
 
 .menu a:hover {
-    transform: translateY(-5px);
-    color: #ff66b2;
-    font-size: 18px;
-    cursor: pointer;
-    margin: 10px;
-    transition: transform 0.3s ease, color 0.3 ease;
+    color: #ffcce0;
 }
 
 .banner {
-    background: linear-gradient(to bottom, #ff99c2, #ffb3d1);
+    background: linear-gradient(to bottom, #ff99c2, #c85f89);
     padding: 60px 20px;
     text-align: center;
     color: white;
-    margin: 20px;
 }
 
 .banner h2 {
@@ -61,10 +55,11 @@ body {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.content {
-    padding: 30px 10%;
+.container {
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 25px;
 }
 
@@ -72,18 +67,23 @@ body {
     background-color: white;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
 }
 
 .card-section h3 {
     color: #333;
-    margin-bottom: 15px;
-    font-size: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    border-bottom: 2px solid #ffcce0;
+    display: inline-block;
 }
 
 .card-section p {
     color: #666;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .todos-personagens {
@@ -93,19 +93,99 @@ body {
     justify-content: center;
 }
 
-
-/* Caixinhas rosas de cada personagem */
-
-.card {
+.Card {
     background-color: #ffcce0;
     color: #555;
-    padding: 15px 30px;
-    border-radius: 30px;
+    padding: 20px;
+    border-radius: 20px;
     text-align: center;
-    font-size: 14px;
+    flex: 1;
+    min-width: 200px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.card strong {
-    color: #333;
+.Card:hover {
+    transform: scale(1.05);
+    background-color: #ffb3d1;
+}
+
+.todas-fotos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.todas-fotos img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid #ffcce0;
+    transition: transform 0.3s ease;
+}
+
+.todas-fotos img:hover {
+    transform: rotate(3deg) scale(1.1);
+}
+
+body {
+    background-color: #ffdae9;
+}
+
+.formulario-faclube {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.formulario-faclube input,
+.formulario-faclube textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    color: #666;
+}
+
+.formulario-faclube input::placeholder,
+.formulario-faclube textarea::placeholder {
+    color: #a0a0a0;
+}
+
+.formulario-faclube button {
+    background-color: #ff8fb1;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
     font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.formulario-faclube button:hover {
+    background-color: #ff76a0;
+}
+
+.card-section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.NOMEFINAL {
+    font-size: 15px;
+    text-align: center;
 }

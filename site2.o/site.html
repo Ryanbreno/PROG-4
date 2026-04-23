@@ -3,20 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Kitty & Amiguinhos</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-    <body style="background-color: #745273;"></body>
     <nav class="menu-opcoes">
-        <h1>Hello kitty & miguinhos</h1>
+        <h1>Hello Kitty & Miguinhos</h1>
         <div class="menu">
-            <a href="#">Sobre</a>
-            <a href="#">Personagens</a>
-            <a href="#">Galeria</a>
-            <a href="#">Entrar</a>
+            <a href="#Sobre">Sobre</a>
+            <a href="#Personagens">Personagens</a>
+            <a href="#Galeria">Galeria</a>
+            <a href="#Entrar">Entrar</a>
         </div>
     </nav>
 
@@ -24,31 +24,53 @@
         <h2>Um mundo cheio de fofura e amizade</h2>
     </header>
 
-    <main class="Content">
-        <section class="card-section">
+    <div class="container">
+        <section class="card-section" id="Sobre">
             <h3>Sobre</h3>
-            <p>O universo Hello kitty é cheio de amizade, carinho e aventuras</p>
+            <p>O universo Hello Kitty é cheio de amizade, carinho e aventuras encantadoras para todas as idades!</p>
         </section>
-    </main>
 
+        <section class="card-section" id="Personagens">
+            <h3>Personagens</h3>
+            <div class="todos-personagens">
+                <div class="Card"><strong>Hello Kitty</strong><br>Gentil e adorável 😉</div>
+                <div class="Card"><strong>My Melody</strong><br>Doce e amigável 👍🏼</div>
+                <div class="Card"><strong>Kuromi</strong><br>Traquina e estilosa 😈</div>
+                <div class="Card"><strong>Cinnamoroll</strong><br>Fofo e tímido ☁️</div>
+                <div class="Card"><strong>Pompompurin</strong><br>Relaxado e fofo🥮</div>
+                <div class="Card"><strong>Badtz-Maru</strong><br>Rebelde e engraçado🐧</div>
+                <div class="Card"><strong>Keroppi</strong><br>Alegre e aventureiro🐸</div>
+                <div class="Card"><strong>Pochacco</strong><br>Curioso e desajeitado🐶</div>
+            </div>
+        </section>
 
-    <section class="card-section">
-        <h3>Personagens</h3>
-        <div class="todos-personagens">
-            <div class="Card"><strong>Hello kitty<br>Gentil e adoravel 😉</strong></div>
-            <div class="Card"><strong>My Melody<br>Doce e amigavel 👍🏼</strong></div>
-            <div class="Card"><strong>Kuromi<br>Travesa e estilosa 😈</strong></div>
-            <div class="Card"><strong>Cinnamoroll kitty<br>Fofo e timido emoji</strong></div>
+        <section class="card-section" id="Galeria">
+            <h3>Galeria</h3>
+            <div class="todas-fotos">
+                <img src="hello kitty.avif" alt="Hello Kitty">
+                <img src="Cinnamoroll kitty.jpg" alt="Cinnamoroll">
+                <img src="my melody.jpg" alt="My Melody">
+                <img src="kuromi.jpeg" alt="Kuromi">
+                <img src="badtz.jpg" alt="badtz">
+                <img src="pompomrim.jpg" alt="pompomrim">
+                <img src="pochacco-free-vector.jpg" alt="pochacco">
+                <img src="keroppi.png" alt="keroppi">
+            </div>
+        </section>
 
-        </div>
-    </section>
-
-
-
-
-    </nav>
-
-
+        <section class="card-section" id="Entrar">
+            <h3>Entrar no Fã-Clube</h3>
+            <form class="formulario-faclube">
+                <input type="text" placeholder="Seu nome" name="nome">
+                <input type="email" placeholder="Seu email" name="email">
+                <textarea placeholder="Mensagem fofinha 💌" name="mensagem" rows="3"></textarea>
+                <button type="submit">Enviar 💖</button>
+            </form>
+        </section>
+    </div>
+    <div class="NOMEFINAL">
+        <p>Site feito por Ryan Breno</p>
+    </div>
 </body>
 
 </html>
