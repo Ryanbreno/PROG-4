@@ -9,6 +9,10 @@ body {
     background-color: #745273;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .menu-opcoes {
     background-color: #b85e8b;
     padding: 20px;

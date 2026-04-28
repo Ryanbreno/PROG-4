@@ -1,0 +1,234 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0a1628;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #e8d5a3;
+}
+
+
+/* ── MENU ── */
+
+.Menu_opcoes {
+    background-color: #0d2545;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    border-bottom: 3px solid #1a6b9a;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.Menu_opcoes h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #f0c040;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    color: #a8d4f0;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.menu a:hover {
+    color: #f0c040;
+    background-color: #1a6b9a44;
+}
+
+
+/* ── CONTAINER ── */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+
+/* parte dos cards ou seja livro*/
+
+.Card_section {
+    background-color: #0d2545;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid #1a6b9a;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.Card_section h3 {
+    color: #f0c040;
+    font-size: 22px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #1a6b9a;
+    padding-bottom: 8px;
+}
+
+
+/* parte dos personagens */
+
+.personagens {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.Card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 180px;
+    color: #a8d4f0;
+    background-color: #0a1e3a;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid #1a6b9a;
+    transition: transform 0.2s;
+}
+
+.Card:hover {
+    transform: translateY(-5px);
+}
+
+.Card img {
+    width: 180px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid #1a6b9a;
+    margin-bottom: 10px;
+}
+
+.Card strong {
+    color: #f0c040;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.Card span {
+    font-size: 12px;
+    color: #a8d4f0;
+}
+
+
+/* parte do livros */
+
+.Livros {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.Livro_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 130px;
+    background-color: #0a1e3a;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #1a6b9a;
+    transition: transform 0.2s;
+}
+
+.Livro_card:hover {
+    transform: translateY(-5px);
+}
+
+.Livro_card img {
+    width: 130px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid #1a6b9a;
+}
+
+.Livro_card li {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 8px;
+    list-style: none;
+    color: #a8d4f0;
+}
+
+
+/* parte das curiosidades */
+
+.Curiosidade h4 {
+    color: #f0c040;
+    margin-top: 15px;
+}
+
+.Curiosidade p,
+.Curiosidade li {
+    color: #a8d4f0;
+    line-height: 1.7;
+}
+
+
+/*parte do fan clube*/
+
+.Fa_clube {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+.Fa_clube input,
+.Fa_clube textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #1a6b9a;
+    background-color: #0a1628;
+    color: #e8d5a3;
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.Fa_clube input:focus,
+.Fa_clube textarea:focus {
+    border-color: #f0c040;
+}
+
+.Fa_clube button {
+    padding: 10px 20px;
+    background-color: #1a6b9a;
+    color: #f0c040;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.Fa_clube button:hover {
+    background-color: #f0c040;
+    color: #0a1628;
+}
