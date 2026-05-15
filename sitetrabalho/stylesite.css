@@ -11,7 +11,7 @@ body {
 }
 
 
-/* ── MENU ── */
+/*menu*/
 
 .Menu_opcoes {
     background-color: #0d2545;
@@ -55,7 +55,7 @@ body {
 }
 
 
-/* ── CONTAINER ── */
+/* container é tudo do personagens ate o fim da pagina*/
 
 .container {
     display: flex;
@@ -134,7 +134,7 @@ body {
 }
 
 
-/* parte do livros */
+/*parte do livros*/
 
 .Livros {
     display: flex;
@@ -175,7 +175,7 @@ body {
 }
 
 
-/* parte das curiosidades */
+/*parte das curiosidades*/
 
 .Curiosidade h4 {
     color: #f0c040;
@@ -186,6 +186,26 @@ body {
 .Curiosidade li {
     color: #a8d4f0;
     line-height: 1.7;
+}
+
+.tabela-personagens {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.tabela-personagens th {
+    background-color: #1a6b9a;
+    color: #f0c040;
+    padding: 10px;
+    text-align: left;
+}
+
+.tabela-personagens td {
+    padding: 10px;
+    color: #a8d4f0;
+    border-bottom: 1px solid #1a6b9a44;
 }
 
 
@@ -231,4 +251,12 @@ body {
 .Fa_clube button:hover {
     background-color: #f0c040;
     color: #0a1628;
+}
+
+.Botao {
+    display: flex;
+    font-size: center;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
 }

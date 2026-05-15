@@ -9,6 +9,10 @@
 </head>
 
 <body>
+
+
+
+
     <nav class="Menu_opcoes">
         <h1>Percy Jackson</h1>
         <div class="menu">
@@ -20,13 +24,17 @@
         </div>
     </nav>
 
+    <div class="Botao">
+        <button type="submit">aleatorio</button>
+    </div>
+
     <div class="container">
         <section class="Card_section" id="sobre">
             <h3>Sobre</h3>
-            <div class="sobre">
+            <article class="sobre">
                 <p>Percy Jackson é um garoto de 12 anos que descobre ser filho de Posêidon, deus dos mares. A partir disso, ele entra em um mundo secreto onde os deuses do Olimpo vivem no mundo moderno e seus filhos — os semideuses — treinam no Acampamento
                     Meio-Sangue, em Nova York. Junto com sua amiga Annabeth Chase e o sátiro Grover, Percy embarca em missões perigosas para impedir guerras entre os deuses e salvar o mundo.</p>
-            </div>
+            </article>
         </section>
 
         <section class="Card_section" id="personagens">
@@ -47,6 +55,17 @@
                     <strong>Grover Underwood</strong>
                     <span>sátiro, melhor amigo de Percy</span>
                 </div>
+                <div class="Card">
+                    <img src="nico-di-angelo.png" alt="nico-di-angelo">
+                    <strong>Nico di Angelo</strong>
+                    <span>controla os mortos e esqueletos</span>
+                </div>
+                <div class="Card">
+                    <img src="thalia-grace-percy-jackson.avif" alt="thalia_grace">
+                    <strong>Thalia Grace</strong>
+                    <span>Controle dos raios</span>
+                </div>
+
             </div>
         </section>
 
@@ -74,6 +93,17 @@
                     <img src="ultimo_olimpiano.jpg" alt="ultimo_olimpiano">
                 </div>
             </div>
+
+            <div class="ordem-leitura">
+                <h3 class="titulo-ordem">Ordem de Leitura</h3>
+                <ol class="lista-ordem">
+                    <li>O Ladrão de Raios</li>
+                    <li>O Mar de Monstros</li>
+                    <li>A Maldição do Titã</li>
+                    <li>A Batalha do Labirinto</li>
+                    <li>O Último Olimpiano</li>
+                </ol>
+            </div>``
         </section>
 
         <section class="Card_section" id="curiosidades">
@@ -90,8 +120,40 @@
                     <li>Luke Castellan era para ser apenas um vilão simples mas ganhou profundidade</li>
                 </ul>
             </div>
-        </section>
 
+            <h4>Comparativo dos Personagens</h4>
+            <table class="tabela-personagens">
+                <thead>
+                    <tr>
+                        <th>Personagem</th>
+                        <th>Pai/Mãe Olímpico</th>
+                        <th>Poder Principal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Percy Jackson</td>
+                        <td>Posêidon</td>
+                        <td>Controle da água</td>
+                    </tr>
+                    <tr>
+                        <td>Annabeth Chase</td>
+                        <td>Atena</td>
+                        <td>Inteligência e estratégia</td>
+                    </tr>
+                    <tr>
+                        <td>Thalia Grace</td>
+                        <td>Zeus</td>
+                        <td>Controle dos raios</td>
+                    </tr>
+                    <tr>
+                        <td>Nico di Angelo</td>
+                        <td>Hades</td>
+                        <td>Controle dos mortos</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
         <section class="Card_section" id="fa-clube">
             <h3>Fã-clube</h3>
             <div class="Fa_clube">
@@ -102,6 +164,18 @@
             </div>
         </section>
     </div>
+    <script>
+        document.querySelector('.Fa_clube button').addEventListener('click', function() {
+            alert('Bem-vindo ao Fã-Clube de Percy Jackson! 🔱');
+        });
+
+        document.querySelectorAll('.Card').forEach(card => {
+            card.addEventListener('click', function() {
+                const nome = this.querySelector('strong').textContent;
+                this.querySelector('span').textContent = '⚡ Semideus do Olimpo!';
+            });
+        });
+    </script>
 
 </body>
 
