@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@700;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0d1a;
+    font-family: 'Nunito', sans-serif;
+    color: #e0e0ff;
+    min-height: 100vh;
+}
+
+#banner {
+    background: linear-gradient(135deg, #9b0000, #e3350d, #ff6b35);
+    padding: 40px 20px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#banner::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 55px solid rgba(255, 255, 255, 0.06);
+}
+
+#banner::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #0d0d1a;
+    border-radius: 60% 60% 0 0;
+}
+
+#banner h1 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 40px;
+    color: white;
+    text-shadow: 3px 3px 0 #7a0000, 0 0 30px rgba(255, 200, 0, 0.4);
+    position: relative;
+    z-index: 1;
+}
+
+#banner p {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 13px;
+    margin-top: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+#controles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 24px 20px 16px;
+}
+
+#controles input {
+    padding: 12px 18px;
+    background: #181830;
+    border: 2px solid #252548;
+    border-radius: 50px;
+    color: #e0e0ff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    outline: none;
+    width: 260px;
+    transition: border-color 0.2s;
+}
+
+#controles input:focus {
+    border-color: #e3350d;
+}
+
+#controles input::placeholder {
+    color: #555588;
+}
+
+#controles button {
+    padding: 12px 24px;
+    background: #e3350d;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+#controles button:hover {
+    background: #b52a0a;
+    transform: scale(1.05);
+}
+
+#controles button:last-child {
+    background: transparent;
+    border: 2px solid #252548;
+    color: #555588;
+}
+
+#controles button:last-child:hover {
+    border-color: #ffd700;
+    color: #ffd700;
+}
+
+#controles select {
+    padding: 12px 18px;
+    background: #181830;
+    border: 2px solid #252548;
+    border-radius: 50px;
+    color: #e0e0ff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+#controles select:focus {
+    border-color: #e3350d;
+}
+
+#controles select option {
+    background: #181830;
+}
+
+#grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 20px 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: #181830;
+    border: 1.5px solid #252548;
+    border-radius: 14px;
+    padding: 18px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    animation: aparecer 0.4s ease both;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+    border-color: #e3350d;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-numero {
+    font-size: 10px;
+    color: #555588;
+    font-weight: 800;
+    letter-spacing: 1px;
+    align-self: flex-start;
+    margin-bottom: 4px;
+}
+
+.card img {
+    width: 96px;
+    height: 96px;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+    transition: transform 0.25s;
+}
+
+.card:hover img {
+    transform: scale(1.15) translateY(-4px);
+}
+
+.card-nome {
+    font-size: 13px;
+    font-weight: 900;
+    text-transform: capitalize;
+    color: white;
+    margin: 8px 0 10px;
+    text-align: center;
+}
+
+.tipos {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tipo {
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    color: white;
+}
+
+.fire {
+    background: #F08030;
+}
+
+.water {
+    background: #6890F0;
+}
+
+.grass {
+    background: #78C850;
+}
+
+.electric {
+    background: #F8D030;
+    color: #333;
+}
+
+.psychic {
+    background: #F85888;
+}
+
+.ice {
+    background: #98D8D8;
+    color: #333;
+}
+
+.dragon {
+    background: #7038F8;
+}
+
+.dark {
+    background: #705848;
+}
+
+.fairy {
+    background: #EE99AC;
+    color: #333;
+}
+
+.normal {
+    background: #A8A878;
+    color: #333;
+}
+
+.fighting {
+    background: #C03028;
+}
+
+.flying {
+    background: #A890F0;
+}
+
+.poison {
+    background: #A040A0;
+}
+
+.ground {
+    background: #E0C068;
+    color: #333;
+}
+
+.rock {
+    background: #B8A038;
+    color: #333;
+}
+
+.bug {
+    background: #A8B820;
+    color: #333;
+}
+
+.ghost {
+    background: #705898;
+}
+
+.steel {
+    background: #B8B8D0;
+    color: #333;
+}
+
+.mensagem {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: #555588;
+    font-size: 16px;
+    font-weight: 700;
+}

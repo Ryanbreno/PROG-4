@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="banner">
+        <h1>Pokédex</h1>
+        <p>Explore o mundo Pokémon</p>
+    </div>
+
+    <div id="controles">
+
+        <input type="text" id="campoBusca" placeholder="Buscar por nome ou ID..." />
+        <button onclick="buscarPokemon()">Buscar</button>
+
+        <select id="filtroTipo" onchange="filtrarPorTipo()">
+      <option value="">Todos os tipos</option>
+      <option value="fire">Fogo</option>
+      <option value="water">Água</option>
+      <option value="grass">Planta</option>
+      <option value="electric">Elétrico</option>
+      <option value="psychic">Psíquico</option>
+      <option value="ice">Gelo</option>
+      <option value="dragon">Dragão</option>
+      <option value="dark">Sombrio</option>
+      <option value="fairy">Fada</option>
+      <option value="normal">Normal</option>
+      <option value="fighting">Lutador</option>
+      <option value="flying">Voador</option>
+      <option value="poison">Veneno</option>
+      <option value="ground">Terra</option>
+      <option value="rock">Pedra</option>
+      <option value="bug">Inseto</option>
+      <option value="ghost">Fantasma</option>
+      <option value="steel">Aço</option>
+    </select>
+        <button onclick="limpar()">Limpar</button>
+
+    </div>
+
+    <div id="grid"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
