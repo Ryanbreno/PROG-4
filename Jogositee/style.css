@@ -1,0 +1,297 @@
+/* ================================
+   IMPORTAÇÃO DE FONTE
+================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Nunito:wght@700;900&display=swap');
+
+/* ================================
+   RESET E CONFIGURAÇÃO GERAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0010;
+    background-image: radial-gradient(ellipse at 20% 50%, #1a003a 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, #200010 0%, transparent 50%);
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+    /* CURSOR PERSONALIZADO: mira vermelha */
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ccircle cx='16' cy='16' r='10' stroke='%23ff2244' stroke-width='2' fill='none'/%3E%3Cline x1='16' y1='2' x2='16' y2='12' stroke='%23ff2244' stroke-width='2'/%3E%3Cline x1='16' y1='20' x2='16' y2='30' stroke='%23ff2244' stroke-width='2'/%3E%3Cline x1='2' y1='16' x2='12' y2='16' stroke='%23ff2244' stroke-width='2'/%3E%3Cline x1='20' y1='16' x2='30' y2='16' stroke='%23ff2244' stroke-width='2'/%3E%3C/svg%3E") 16 16, crosshair;
+}
+
+
+/* ================================
+   TÍTULO
+================================ */
+
+h1 {
+    font-family: 'Creepster', cursive;
+    font-size: 48px;
+    color: #ff2244;
+    text-align: center;
+    padding: 18px 0 6px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 20px #ff224488, 0 0 40px #ff224444;
+}
+
+
+/* ================================
+   HUD (PONTOS E TEMPO)
+================================ */
+
+#hud {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 8px 0 14px;
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 34, 68, 0.08);
+    border: 1.5px solid rgba(255, 34, 68, 0.3);
+    border-radius: 12px;
+    padding: 8px 28px;
+}
+
+.hud-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #ff224488;
+}
+
+.hud-valor {
+    font-size: 30px;
+    font-weight: 900;
+    color: #ff2244;
+    text-shadow: 0 0 10px #ff224466;
+}
+
+
+/* ================================
+   BOTÃO INICIAR
+================================ */
+
+#btnIniciar {
+    display: block;
+    margin: 0 auto 10px;
+    padding: 14px 44px;
+    font-family: 'Creepster', cursive;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: white;
+    background: linear-gradient(135deg, #cc0022, #ff2244);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 24px #ff224466;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+#btnIniciar:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 40px #ff2244aa;
+}
+
+#btnIniciar:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* ================================
+   ARENA (onde os inimigos surgem)
+================================ */
+
+#arena {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 175px);
+}
+
+
+/* ================================
+   INIMIGO
+================================ */
+
+.inimigo {
+    position: absolute;
+    /* posicionamento absoluto dentro da arena */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 52px;
+    user-select: none;
+    filter: drop-shadow(0 0 12px #ff224488);
+    animation: surgir 0.2s ease-out;
+}
+
+
+/* Se tiver a imagem mask_yami.png na mesma pasta,
+   adicione a classe "com-imagem" via JS para mostrar ela */
+
+.inimigo.com-imagem {
+    background: url('mask_yami.png') center / cover no-repeat;
+    font-size: 0;
+}
+
+.inimigo:hover {
+    filter: drop-shadow(0 0 20px #ff2244cc);
+    transform: scale(1.1);
+}
+
+
+/* ================================
+   ANIMAÇÕES DO INIMIGO
+================================ */
+
+@keyframes surgir {
+    from {
+        transform: scale(0) rotate(-20deg);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes sumir {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.inimigo.sumindo {
+    animation: sumir 0.2s ease-in forwards;
+}
+
+
+/* ================================
+   PARTÍCULA DE "+10" AO CLICAR
+================================ */
+
+.particula {
+    position: fixed;
+    pointer-events: none;
+    font-size: 22px;
+    font-weight: 900;
+    color: #ff2244;
+    text-shadow: 0 0 10px #ff2244;
+    animation: subir 0.7s ease-out forwards;
+    z-index: 999;
+}
+
+@keyframes subir {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-60px) scale(1.4);
+    }
+}
+
+
+/* ================================
+   RASTRO DO MOUSE
+================================ */
+
+.rastro {
+    position: fixed;
+    pointer-events: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff2244;
+    transform: translate(-50%, -50%);
+    animation: fadeRastro 0.4s forwards;
+    z-index: 9999;
+}
+
+@keyframes fadeRastro {
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+
+/* ================================
+   TELA DE FIM DE JOGO
+================================ */
+
+#telafim {
+    display: none;
+    /* escondida por padrão */
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+}
+
+#telafim.visivel {
+    display: flex;
+    /* aparece quando classe "visivel" é adicionada */
+}
+
+#telafim h2 {
+    font-family: 'Creepster', cursive;
+    font-size: 58px;
+    color: #ff2244;
+    text-shadow: 0 0 30px #ff224499;
+    letter-spacing: 3px;
+}
+
+#telafim p {
+    font-size: 20px;
+    color: #ffaaaa;
+    font-weight: 700;
+}
+
+#telafim span {
+    font-size: 52px;
+    font-weight: 900;
+    color: white;
+}
+
+#telafim button {
+    margin-top: 8px;
+    padding: 14px 44px;
+    font-family: 'Creepster', cursive;
+    font-size: 22px;
+    color: white;
+    background: linear-gradient(135deg, #cc0022, #ff2244);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 24px #ff224466;
+    transition: transform 0.15s;
+}
+
+#telafim button:hover {
+    transform: scale(1.07);
+}
