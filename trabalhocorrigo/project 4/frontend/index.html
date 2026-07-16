@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Percy Jackson - Universo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="Menu_opcoes">
+    <h1>PERCY JACKSON</h1>
+    <div class="menu">
+      <a href="#personagens">Personagens</a>
+      <a href="#livros">Livros</a>
+      <a id="logout-link" href="#" class="hidden">Sair</a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <section id="auth-section" class="Card_section">
+      <h3 id="auth-title">Entrar</h3>
+
+      <form id="login-form" class="Fa_clube">
+        <input type="email" id="login-email" placeholder="E-mail" required />
+        <input type="password" id="login-password" placeholder="Senha" required />
+        <div class="Botao"><button type="submit">Entrar</button></div>
+        <p id="login-error" class="erro"></p>
+      </form>
+
+      <div class="Botao">
+        <button type="button" id="show-register">Não tenho conta, quero me registrar</button>
+      </div>
+
+      <form id="register-form" class="Fa_clube hidden">
+        <input type="text" id="register-name" placeholder="Nome" required />
+        <input type="email" id="register-email" placeholder="E-mail" required />
+        <input type="password" id="register-password" placeholder="Senha (mín. 6 caracteres)" required />
+        <div class="Botao"><button type="submit">Registrar</button></div>
+        <p id="register-error" class="erro"></p>
+        <p id="register-success" class="sucesso"></p>
+      </form>
+
+      <div class="Botao">
+        <button type="button" id="show-login" class="hidden">Já tenho conta, quero entrar</button>
+      </div>
+    </section>
+
+    <section id="personagens" class="Card_section">
+      <h3>Personagens</h3>
+      <div class="personagens">
+        <div class="Card">
+          <img src="img/percy.jpeg" alt="Percy Jackson" />
+          <strong>Percy Jackson</strong>
+          <span>Filho de Poseidon</span>
+        </div>
+        <div class="Card">
+          <img src="img/annabeth.jpg" alt="Annabeth Chase" />
+          <strong>Annabeth Chase</strong>
+          <span>Filha de Atena</span>
+        </div>
+        <div class="Card">
+          <img src="img/Grover_03.jpg" alt="Grover Underwood" />
+          <strong>Grover Underwood</strong>
+          <span>Sátiro protetor</span>
+        </div>
+        <div class="Card">
+          <img src="img/nico-di-angelo.png" alt="Nico di Angelo" />
+          <strong>Nico di Angelo</strong>
+          <span>Filho de Hades</span>
+        </div>
+        <div class="Card">
+          <img src="img/thalia-grace-percy-jackson.avif" alt="Thalia Grace" />
+          <strong>Thalia Grace</strong>
+          <span>Filha de Zeus</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="livros" class="Card_section hidden">
+      <h3 id="livro-form-title">Novo livro</h3>
+      <form id="livro-form" class="Fa_clube">
+        <input type="hidden" id="livro-id" />
+        <input type="text" id="livro-titulo" placeholder="Título do livro" required />
+        <textarea id="livro-conteudo" placeholder="Sinopse" required></textarea>
+        <input type="text" id="livro-imagem" placeholder="Nome do arquivo de imagem (ex: ladrao-de-raios.jpg) ou URL" />
+        <input type="number" id="livro-ordem" placeholder="Ordem na saga" value="0" />
+        <div class="Botao">
+          <button type="submit" id="livro-submit">Salvar</button>
+        </div>
+        <div class="Botao">
+          <button type="button" id="livro-cancel" class="hidden">Cancelar edição</button>
+        </div>
+        <p id="livro-error" class="erro"></p>
+      </form>
+
+      <h3>A Saga</h3>
+      <div class="Livros" id="livros-list"></div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
