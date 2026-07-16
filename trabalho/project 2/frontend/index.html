@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerenciador de Artigos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="auth-screen" class="screen">
+    <div class="card">
+      <h1>Gerenciador de Artigos</h1>
+
+      <form id="login-form" class="form">
+        <h2>Entrar</h2>
+        <input type="email" id="login-email" placeholder="E-mail" required />
+        <input type="password" id="login-password" placeholder="Senha" required />
+        <button type="submit">Entrar</button>
+        <p id="login-error" class="error"></p>
+      </form>
+
+      <button id="show-register" class="link-button">Não tenho conta, quero me registrar</button>
+
+      <form id="register-form" class="form hidden">
+        <h2>Criar conta</h2>
+        <input type="text" id="register-name" placeholder="Nome" required />
+        <input type="email" id="register-email" placeholder="E-mail" required />
+        <input type="password" id="register-password" placeholder="Senha (mín. 6 caracteres)" required />
+        <button type="submit">Registrar</button>
+        <p id="register-error" class="error"></p>
+        <p id="register-success" class="success"></p>
+      </form>
+
+      <button id="show-login" class="link-button hidden">Já tenho conta, quero entrar</button>
+    </div>
+  </div>
+
+  <div id="app-screen" class="screen hidden">
+    <header>
+      <h1>Artigos</h1>
+      <button id="logout-button">Sair</button>
+    </header>
+
+    <section class="card">
+      <h2 id="form-title">Novo artigo</h2>
+      <form id="article-form" class="form">
+        <input type="hidden" id="article-id" />
+        <input type="text" id="article-titulo" placeholder="Título" required />
+        <textarea id="article-conteudo" placeholder="Conteúdo" required></textarea>
+        <input type="text" id="article-imagem" placeholder="URL da imagem (opcional)" />
+        <input type="number" id="article-ordem" placeholder="Ordem de exibição" value="0" />
+        <div class="form-actions">
+          <button type="submit" id="article-submit">Salvar</button>
+          <button type="button" id="article-cancel" class="secondary hidden">Cancelar edição</button>
+        </div>
+        <p id="article-error" class="error"></p>
+      </form>
+    </section>
+
+    <section id="articles-list"></section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
